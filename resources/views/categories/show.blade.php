@@ -37,11 +37,11 @@
         @foreach ($category->books as $book )
             <div class="row py-1">
                 <div class="col-md-9 d-flex align-items-center">
-                    <a href="{{ route('books-edit', ['id' => $book->id]) }}">{{ $book->title }}</a>
+                    <a href="{{ route('book-edit', ['id' => $book->id]) }}">{{ $book->title }}</a>
                 </div>
 
                 <div class="col-md-3 d-flex justify-content-end">
-                    <form action="{{ route('books-destroy', [$book->id]) }}" method="POST">
+                    <form action="{{ route('book-destroy', [$book->id]) }}" method="POST">
                         @method('DELETE')
                         @csrf
                         <button class="btn btn-danger btn-sm">Eliminar</button>
