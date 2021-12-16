@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BookController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\ServiceController;
+use App\Http\Controllers\PaymentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -35,3 +37,16 @@ Route::patch('/book/{id}', [BookController::class , 'update'])->name('book-updat
 
 // Categories
 Route::resource('categories', CategoryController::class);
+
+Route::get('/payments', PaymentController::class . '@index')->name('payments');
+
+Route::post('/payments', PaymentController::class . '@store');
+
+Route::delete('/payment/{id}', [PaymentController::class , 'destroy'])->name('payment-destroy');
+
+Route::get('/payment/{id}', [PaymentController::class , 'show'])->name('payment-edit');
+
+Route::patch('/payment/{id}', [PaymentController::class , 'update'])->name('payment-update');
+
+Route::resource('services', ServiceController::class);
+
