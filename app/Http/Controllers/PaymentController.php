@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Service;
+use App\Models\Payment;
 
 class PaymentController extends Controller
 {
@@ -14,19 +16,21 @@ class PaymentController extends Controller
     }
 
     public function store(Request $request){
-
+        
         $request->validate([
             'title' => 'required|min:3',
-            'summary' => 'string',
+            'date' => 'required|date_format:d-m-Y',
             'cost' => 'required',
+            'status' => 'sometimes|boolean',
             'service_id' => 'required',
         ]);
     
-        $payment = new payment;
+        $payment = new Payment;
         $payment->title = $request->title;
-        $payment->summary = $request->summary;
+        $payment->date = $request->date;
         $payment->cost = $request->cost;
-        $payment->Service_id = $request->Service_id;
+        $payment->payed = $request->status ?? 0;
+        $payment->service_id = $request->service_id;
         $payment->save();
     
         return redirect()->route('payments')->with('success', 'payment created successfully');

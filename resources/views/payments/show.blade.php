@@ -17,7 +17,7 @@
                     <h6 class="alert alert-success">{{ session('success') }}</h6>
             @endif
 
-            <label for="title" class="form-label">Título del libro</label>
+            <label for="title" class="form-label">Título del pago</label>
             <input type="text" class="form-control mb-2" name="title" id="exampleFormControlInput1" placeholder="El señor de los anillos" value="{{ $payment->title }}">
 
             <label for="summary" class="form-label">Sinópsis</label>
@@ -26,13 +26,13 @@
             <label for="cost" class="form-label">Precio: </label>
             <input type="number" class="form-control mb-2" name="cost" id="exampleFormControlInput1" placeholder="€€" value="{{ $payment->cost }}">
 
-             <label for="category_id" class="form-label">Categoria del libro</label>
+             <label for="category_id" class="form-label">Servicio del pago</label>
             <select name="category_id" class="form-select">
-                @foreach ($categories as $category)
-                    <option value="{{$category->id}}">{{$category->name}}</option>
+                @foreach ($services as $service)
+                    <option value="{{$service->id}}">{{$service->name}}</option>
                 @endforeach
             </select>
-            <input type="submit" value="Actualizar libro" class="btn btn-primary my-2" />
+            <input type="submit" value="Actualizar pago" class="btn btn-primary my-2" />
         </div>
     </form>
 
