@@ -9,7 +9,24 @@
                 @csrf
 
                 <div class="mb-3 col">
+
                 @error('title')
+                    <div class="alert alert-danger">{{ $message }}</div>
+                @enderror  
+
+                @error('date')
+                    <div class="alert alert-danger">{{ $message }}</div>
+                @enderror    
+
+                @error('cost')
+                    <div class="alert alert-danger">{{ $message }}</div>
+                @enderror    
+
+                @error('status')
+                    <div class="alert alert-danger">{{ $message }}</div>
+                @enderror
+
+                @error('service_id')
                     <div class="alert alert-danger">{{ $message }}</div>
                 @enderror
 

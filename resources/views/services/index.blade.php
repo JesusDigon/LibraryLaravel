@@ -28,7 +28,7 @@
                     <label for="exampleColorInput" class="form-label">Escoge un color para el servicio</label>
                     <input type="color" class="form-control form-control-color" name="color" id="exampleColorInput" value="#563d7c" title="Choose your color">
 
-                    <input type="submit" value="Crear categoria" class="btn btn-primary my-2" />
+                    <input type="submit" value="Crear servicio" class="btn btn-primary my-2" />
                 </div>
             </form>
 
